@@ -1,11 +1,16 @@
 {
   "name": "ms-teams-webhook",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Library for using the Microsoft Teams Incomming Webhooks",
-  "main": "index.js",
+  "main": "dist/IncommingWebhook.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "dependencies": {
     "axios": "^0.19.0"
   },
+
   "devDependencies": {},
   "scripts": {
     "prepare": "npm run build",
@@ -23,6 +28,7 @@
     "teams",
     "webhook"
   ],
+
   "author": "VerHext",
   "license": "Apache-2.0",
   "bugs": {

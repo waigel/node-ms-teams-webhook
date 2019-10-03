@@ -43,16 +43,10 @@ export class IncomingWebhook {
 
     try {
       const response = await this.axios.post(this.url, payload);
+
       return this.buildResult(response);
     } catch (error) {
-      // Wrap errors in this packages own error types (abstract the implementation details' types)
-      if (error.response !== undefined) {
             throw error;
-      } else if (error.request !== undefined) {
-            throw error;
-      } else {
-            throw error;
-      }
     }
   }
 
