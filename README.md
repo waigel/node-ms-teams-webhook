@@ -28,7 +28,7 @@ const webhook = new IncomingWebhook(url);
 
 ### Send a webhook
 
-This is a very nice page to generate the payloud for your Microsoft Teams Webhook.
+This is a very nice page to generate the payload for your Microsoft Teams Webhook.
 
 https://messagecardplayground.azurewebsites.net/
 
