@@ -1,5 +1,5 @@
 # Microsoft Incomming Webhooks
-This package help you for making request to Microsoft Teams Incomming Webhooks. Use it in your application to send a notification to a channel.
+This package helps you making requests to Microsoft Teams Incomming Webhooks. Use it in your application to send a notification to a channel.
 
 ## Installation
 
@@ -28,7 +28,7 @@ const webhook = new IncomingWebhook(url);
 
 ### Send a webhook
 
-This is a very nice page to generate the payloud for your Microsoft Teams Webhhok.
+This is a very nice page to generate the payloud for your Microsoft Teams Webhook.
 
 https://messagecardplayground.azurewebsites.net/
 
@@ -67,4 +67,4 @@ const webhook = new IncomingWebhook(url);
 
 ---
 
-Crediets go out to Slack. I took her [Webhook lib](https://github.com/slackapi/node-slack-sdk/blob/master/packages/webhook/README.md) as a template for this API.
+Credits go out to Slack. I took her [Webhook lib](https://github.com/slackapi/node-slack-sdk/blob/master/packages/webhook/README.md) as a template for this API.
