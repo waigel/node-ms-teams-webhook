@@ -1,5 +1,5 @@
-# Microsoft Incomming Webhooks
-This package helps you making requests to Microsoft Teams Incomming Webhooks. Use it in your application to send a notification to a channel.
+# Microsoft Incoming Webhooks
+This package helps you making requests to Microsoft Teams Incoming Webhooks. Use it in your application to send a notification to a channel.
 
 ## Installation
 
@@ -32,7 +32,7 @@ This is a very nice page to generate the payload for your Microsoft Teams Webhoo
 
 https://messagecardplayground.azurewebsites.net/
 
-You can send only JSON stringify strings. `JSON.stringify({paylod})`
+You can only send JSON-stringified objects. I.e. `payload` needs to be stringified with `JSON.stringify(payload)` and passed to the client.
 
 ```javascript
 const { IncomingWebhook } = require('ms-teams-webhook');
@@ -45,22 +45,20 @@ const webhook = new IncomingWebhook(url);
 
 (async () => {
   await webhook.send(JSON.stringify({
-	"@type": "MessageCard",
-	"@context": "https://schema.org/extensions",
-	"summary": "Issue 176715375",
-	"themeColor": "0078D7",
-	"title": "Issue opened: \"Push notifications not working\"",
-	"sections": [
-		{
-			"activityTitle": "Miguel Garcie",
-			"activitySubtitle": "9/13/2016, 11:46am",
-			"activityImage": "https://connectorsdemo.azurewebsites.net/images/MSC12_Oscar_002.jpg",
-
-			"text": "There is a problem with Push notifications, they don't seem to be picked up by the connector."
-		}
-	]
-})
-  );
+    "@type": "MessageCard",
+    "@context": "https://schema.org/extensions",
+    "summary": "Issue 176715375",
+    "themeColor": "0078D7",
+    "title": "Issue opened: \"Push notifications not working\"",
+    "sections": [
+      {
+        "activityTitle": "Miguel Garcie",
+        "activitySubtitle": "9/13/2016, 11:46am",
+        "activityImage": "https://connectorsdemo.azurewebsites.net/images/MSC12_Oscar_002.jpg",
+        "text": "There is a problem with Push notifications, they don't seem to be picked up by the connector."
+      }
+    ]
+  }));
 })();
 
 ```
