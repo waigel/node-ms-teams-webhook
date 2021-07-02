@@ -45,4 +45,4 @@ class IncomingWebhook {
     }
 }
 exports.IncomingWebhook = IncomingWebhook;
-//# sourceMappingURL=IncommingWebhook.js.map
+//# sourceMappingURL=IncomingWebhook.js.map

@@ -1,7 +1,7 @@
 {
   "name": "@verhext/node-ms-teams-webhook",
   "version": "1.0.4",
-  "description": "Library for using the Microsoft Teams Incomming Webhooks",
+  "description": "Library for using the Microsoft Teams Incoming Webhooks",
   "main": "dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [

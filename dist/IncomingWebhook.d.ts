@@ -22,4 +22,4 @@ export declare class IncomingWebhook {
      */
     private buildResult;
 }
-//# sourceMappingURL=IncommingWebhook.d.ts.map
+//# sourceMappingURL=IncomingWebhook.d.ts.map

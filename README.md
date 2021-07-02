@@ -13,7 +13,7 @@ $ npm install ms-teams-webhook
 
 The package exports a `IncomingWebhook` class. You'll need to initialize it with the URL you received from Microsoft Teams.
 
-The URL can come from installation the `Webhook Connector` by `right click on a channel > Incomming Webhook > Configuration > (insert a name) > Create`
+The URL can come from installation the `Webhook Connector` by `right click on a channel > Incoming Webhook > Configuration > (insert a name) > Create`
 
 
 ```javascript
