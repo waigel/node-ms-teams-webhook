@@ -38,15 +38,16 @@ export class IncomingWebhook {
    */
   public async send(message: string): Promise<IncomingWebhookResult | undefined> {
     // NOTE: no support for TLS config
-     let  payload = message;
-
+    let  payload = message;
 
     try {
       const response = await this.axios.post(this.url, payload);
 
       return this.buildResult(response);
     } catch (error) {
-            throw error;
+      // make troubleshooting API failures a bit easier by pinning the response body on the error
+      error.text = this.buildResult(error.response).text;
+      throw error;
     }
   }
 
