@@ -1,24 +1,19 @@
 {
-  "name": "@verhext/node-ms-teams-webhook",
-  "version": "1.0.4",
+  "name": "ms-teams-webhook",
+  "version": "2.0.0",
   "description": "Library for using the Microsoft Teams Incomming Webhooks",
-  "main": "dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "out/index.js",
+  "types": "./out/index.d.ts",
   "files": [
-    "dist/**/*"
+    "out/**/*"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "dependencies": {
     "axios": "^0.21.1"
   },
   "scripts": {
-    "prepare": "npm run build",
-    "build": "npm run build:clean && tsc",
-    "build:clean": "rm -rf ./dist",
-    "clean": "rm -rf ./dist",
-    "lint": "tslint --project ."
+    "build": "tsc",
+    "lint": "tslint --project .",
+    "demo": "ts-node ./demo/example.ts"
   },
   "repository": {
     "type": "git",
@@ -34,5 +29,10 @@
   "bugs": {
     "url": "https://github.com/VerHext/node-ms-teams-webhook/issues"
   },
-  "homepage": "https://github.com/VerHext/node-ms-teams-webhook#readme"
+  "homepage": "https://github.com/VerHext/node-ms-teams-webhook#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "ts-node": "^10.9.1",
+    "tslint": "^6.1.3"
+  }
 }
