@@ -1,6 +1,6 @@
 > :warning: Version under 2.0.x is not compatible with the new Microsoft Teams Incoming Webhooks. Please upgrade to 2.0.x
 >
-> `npm install ms-teams-webhook@2.0.0`
+> `npm install ms-teams-webhook@2.0.2`
 
 # Microsoft Incoming Webhooks
 
