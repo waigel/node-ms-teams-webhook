@@ -34,13 +34,19 @@ export class IncomingWebhook {
   }
   /**
    * Send a notification to a conversation
-   * @param message the message (a simple string, or an object describing the message)
+   * @param message the message (object describing the message)
    */
   public async send(
     message: Payload
   ): Promise<IncomingWebhookResult | undefined> {
     // NOTE: no support for TLS config
     let payload = message;
+
+    if (typeof payload === "string") {
+      throw new Error(
+        "Message must be a JSON object. Dont use a string or JSON.stringify() your message"
+      );
+    }
 
     try {
       const response = await this.axios.post(this.url, payload);
