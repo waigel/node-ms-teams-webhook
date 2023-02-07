@@ -2,7 +2,7 @@
 
 export {
   IncomingWebhook,
-} from './IncommingWebhook';
+} from './IncomingWebhook';
 
 export {
   IncomingWebhookResult,
