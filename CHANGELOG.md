@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.1.0](https://github.com/waigel/node-ms-teams-webhook/compare/ms-teams-webhook-v2.0.4...ms-teams-webhook-v2.1.0) (2024-05-26)
+
+
+### Features
+
+* add codeql scan ([5949025](https://github.com/waigel/node-ms-teams-webhook/commit/5949025318655b946bd73287a93978b7c3107c83))
+* Remove deprecated message from README.md ([b43e121](https://github.com/waigel/node-ms-teams-webhook/commit/b43e1219267d0754818c7192d0a03442df3bce20))
+* Remove old playground link from README.md ([533225a](https://github.com/waigel/node-ms-teams-webhook/commit/533225a448215e5d5ed85ec534eef1d9ff6dadf5))
+
 ## [2.0.4](https://github.com/waigel/node-ms-teams-webhook/compare/ms-teams-webhook-v2.0.3...ms-teams-webhook-v2.0.4) (2024-03-17)
 
 
