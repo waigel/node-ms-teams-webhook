@@ -1,7 +1,3 @@
-> :warning: Version under 2.0.x is not compatible with the new Microsoft Teams Incoming Webhooks. Please upgrade to 2.0.x
->
-> `npm install ms-teams-webhook@2.0.2`
-
 # Microsoft Incoming Webhooks
 
 This package helps you making requests to Microsoft Teams Incoming Webhooks. Use it in your application to send a notification to a channel.
