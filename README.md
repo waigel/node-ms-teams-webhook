@@ -45,11 +45,7 @@ const webhook = new IncomingWebhook(url);
 
 ### Send a webhook
 
-This is a very nice page to generate the payload for your Microsoft Teams Webhook.
-
-https://messagecardplayground.azurewebsites.net/
-
-or you can use the "Editor for adaptive cards" in the Microsoft Teams Developer Portal
+You can use the "Editor for adaptive cards" in the Microsoft Teams Developer Portal
 
 https://dev.teams.microsoft.com/cards
 
