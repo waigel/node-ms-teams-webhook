@@ -1,6 +1,6 @@
 {
   "name": "ms-teams-webhook",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "description": "Library for using the Microsoft Teams Incomming Webhooks",
   "main": "out/index.js",
   "types": "./out/index.d.ts",
