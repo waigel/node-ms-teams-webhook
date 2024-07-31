@@ -1,0 +1,24 @@
+{
+    "name": "ms-teams-webhook",
+    "version": "3.0.0",
+    "type": "module",
+    "description": "Library for using the Microsoft Teams Incomming Webhooks",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/waigel/node-ms-teams-webhook.git",
+        "directory": "packages/lib"
+    },
+    "author": "waigel",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/waigel/node-ms-teams-webhook/issues"
+    },
+    "homepage": "https://github.com/waigel/node-ms-teams-webhook#readme",
+    "devDependencies": {
+        "tsup": "^8.2.3"
+    },
+    "scripts": {
+        "dev": "tsup --watch",
+        "build": "tsup"
+    }
+}

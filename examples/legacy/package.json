@@ -1,0 +1,16 @@
+{
+    "name": "ms-teams-webhook-example-legacy",
+    "private": true,
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "test": "vitest"
+    },
+    "dependencies": {
+        "ms-teams-webhook-legacy": "workspace:*"
+    },
+    "devDependencies": {
+        "body-parser": "^1.20.2",
+        "express": "^4.19.2"
+    }
+}
