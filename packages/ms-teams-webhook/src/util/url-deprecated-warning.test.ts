@@ -2,7 +2,7 @@ import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { showWebhookUrlDeprecatedWarning } from "./url-deprecated-warning";
 
 describe("url-deprecated-warning", () => {
-  let originalConsoleWarn;
+  let originalConsoleWarn: Console["warn"];
 
   // Before all tests, override console.log with a no-op function
   beforeAll(() => {

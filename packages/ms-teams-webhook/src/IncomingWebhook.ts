@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosResponse } from "axios";
+import axios, { type AxiosInstance, type AxiosResponse } from "axios";
 import { showWebhookUrlDeprecatedWarning } from "./util/url-deprecated-warning";
 
 export interface IncomingWebhookResult {
