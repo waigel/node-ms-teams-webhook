@@ -1,5 +1,9 @@
 import axios, { AxiosInstance, AxiosResponse } from "axios";
-import { IncomingWebhookResult } from "./types";
+import { showWebhookUrlDeprecatedWarning } from "./util/url-deprecated-warning";
+
+export interface IncomingWebhookResult {
+  text: string;
+}
 
 /**
  * A client for Teams's Incoming Webhooks
@@ -23,6 +27,8 @@ export class IncomingWebhook {
     if (url === undefined) {
       throw new Error("Incoming webhook URL is required");
     }
+    // Show console warning, if URL is deprecated
+    showWebhookUrlDeprecatedWarning(url);
 
     this.url = url;
 

@@ -1,1 +1,1 @@
-export const a = "a";
+export { IncomingWebhook, type IncomingWebhookResult } from "./IncomingWebhook";

@@ -4,9 +4,7 @@
   "description": "Library for using the Microsoft Teams Incomming Webhooks",
   "main": "dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist/**/*"
-  ],
+  "files": ["dist/**/*"],
   "dependencies": {
     "axios": "^1.6.7"
   },
@@ -19,11 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/waigel/node-ms-teams-webhook.git"
   },
-  "keywords": [
-    "microsoft",
-    "teams",
-    "webhook"
-  ],
+  "keywords": ["microsoft", "teams", "webhook"],
   "author": "waigel",
   "license": "MIT",
   "bugs": {

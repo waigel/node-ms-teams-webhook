@@ -1,7 +1,7 @@
-import { IncomingWebhook } from "ms-teams-webhook-legacy";
-import { describe, it, expect, beforeAll, afterAll } from "vitest";
-import express from "express";
 import bodyParser from "body-parser";
+import express from "express";
+import { IncomingWebhook } from "ms-teams-webhook-legacy";
+import { afterAll, beforeAll, describe, expect, it } from "vitest";
 
 let server;
 let receivedData = null;
