@@ -134,4 +134,52 @@ describe("IncomingWebhook", () => {
       });
     });
   });
+
+  describe("send", () => {
+    // Deprecated send method
+    it("should send message card", async () => {
+      const messageCard = {
+        "@type": "MessageCard",
+        "@context": "https://schema.org/extensions",
+        summary: "Issue 176715375",
+        themeColor: "0078D7",
+        title: 'Issue opened: "Push notifications not working"',
+        sections: [
+          {
+            activityTitle: "Miguel Garcie",
+            activitySubtitle: "9/13/2016, 11:46am",
+            activityImage:
+              "https://connectorsdemo.azurewebsites.net/images/MSC12_Oscar_002.jpg",
+            text: "There is a problem with Push notifications, they don't seem to be picked up by the connector.",
+          },
+        ],
+      };
+
+      const webhook = new IncomingWebhook("http://localhost/echo-text");
+      const res = await webhook.send(messageCard);
+      expect(res).toEqual(messageCard);
+    });
+  });
+
+  describe("sendRawAdaptiveCard", () => {
+    // Deprecated send method
+    it("should send any json payload", async () => {
+      const anyJsonPayload = {
+        "@type": "CustomTypeForMessageCard",
+        _context: "https://schema.org/extensions",
+        summary: "Issue 176715375",
+        themeColor: "0078D7",
+        title: 'Issue opened: "Push notifications not working"',
+        fields: [
+          {
+            name: "Miguel Garcie",
+          },
+        ],
+      };
+
+      const webhook = new IncomingWebhook("http://localhost/echo");
+      const res = await webhook.sendRawAdaptiveCard(anyJsonPayload);
+      expect(res.data).toEqual(anyJsonPayload);
+    });
+  });
 });

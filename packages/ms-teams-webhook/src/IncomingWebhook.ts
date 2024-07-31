@@ -37,8 +37,6 @@ export class IncomingWebhook {
     if (url === undefined) {
       throw new Error("Incoming webhook URL is required");
     }
-    // Show console warning, if URL is deprecated
-    showWebhookUrlDeprecatedWarning(url);
 
     this.url = url;
 
@@ -52,7 +50,8 @@ export class IncomingWebhook {
   /**
    * Send a notification to a conversation
    * @param message the message (object describing the message)
-   * @deprecated Use sendText or sendAdaptiveCard instead (NOT COMAP)
+   * @deprecated Microsoft deprecated O365 Connectors, switch to Workflow Apps and use the new
+   * `sendText` or `sendAdaptiveCard` methods
    */
   public async send(
     message: Payload,
@@ -75,13 +74,37 @@ export class IncomingWebhook {
     }
   }
 
+  /**
+   * Sends a plain text message to a team channel or conversation.
+   *
+   * @param text The text message to be sent.
+   * @returns A promise that resolves when the message is sent successfully.
+   */
   public async sendText(text: string) {
     tinyassert(text, "text cannot be empty or undefined");
     tinyassert(typeof text === "string", "text must be a string");
 
+    // Show console warning, if URL is deprecated
+    showWebhookUrlDeprecatedWarning(this.url);
+
     return await this.sendPlainTextRequest(text);
   }
 
+  /**
+   * Sends an adaptive card to a team channel or conversation.
+   * Use the Adaptive Card Designer (https://adaptivecards.io/designer) to create your card schema.
+   *
+   * This function takes a template payload and fills it with the provided data. Placeholders in the
+   * template should be defined using ${variableName}, which will be replaced with values from the
+   * data object. The variable names must match the keys in the data object.
+   *
+   * If you want to send multiple adaptive cards with different data, provide an array of data objects.
+   *
+   * @param templatePayload The adaptive card schema to be used as the template.
+   * @param data The data object or array of data objects used to fill the adaptive card. If not provided,
+   * the card will be sent as is.
+   * @returns A promise that resolves when the card is sent successfully.
+   */
   public async sendAdaptiveCard<T extends AdaptiveCard, D = any>(
     templatePayload: T,
     data?: D | [],
@@ -95,6 +118,9 @@ export class IncomingWebhook {
       templatePayload.type === "AdaptiveCard",
       "Only 'AdaptiveCard' type is supported",
     );
+
+    // Show console warning, if URL is deprecated
+    showWebhookUrlDeprecatedWarning(this.url);
 
     const templatePayloadData = Array.isArray(data) ? data : [data];
 
@@ -122,6 +148,30 @@ export class IncomingWebhook {
         content: card,
       })),
     });
+  }
+
+  /**
+   * Sends a raw JSON payload to the incoming webhook. This method is generic and can be used for sending
+   * any type of message payload, including adaptive cards. However, it is recommended to use the
+   * `sendText` and `sendAdaptiveCard` methods for sending text and adaptive cards, respectively.
+   *
+   * Note: When sending an adaptive card, ensure that your card JSON is wrapped in the following structure:
+   * {
+   *   "type": "message",
+   *   "attachments": [
+   *     {
+   *       "contentType": "application/vnd.microsoft.card.adaptive",
+   *       "contentUrl": null,
+   *       "content": { >>> YOUR CARD HERE <<< }
+   *     }
+   *   ]
+   * }
+   *
+   * @param card The raw JSON payload representing the message or card to be sent.
+   * @returns A promise that resolves when the raw card is sent successfully.
+   */
+  public sendRawAdaptiveCard<T>(card: T) {
+    return this.sendPlainJSONRequest(card);
   }
 
   private async sendPlainTextRequest(text: string) {
