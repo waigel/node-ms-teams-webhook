@@ -1,5 +1,11 @@
-import axios, { type AxiosInstance, type AxiosResponse } from "axios";
-import { showWebhookUrlDeprecatedWarning } from "./util/url-deprecated-warning";
+import axios, {
+  isAxiosError,
+  type AxiosInstance,
+  type AxiosResponse,
+} from "axios";
+import { MicrosoftTeamsError } from "./errors/MicrosoftTeamsError";
+import { tinyassert } from "./utils/tinyassert";
+import { showWebhookUrlDeprecatedWarning } from "./utils/url-deprecated-warning";
 
 export interface IncomingWebhookResult {
   text: string;
@@ -59,7 +65,27 @@ export class IncomingWebhook {
 
       return this.buildResult(response);
     } catch (error) {
-      throw error;
+      return handleError(error);
+    }
+  }
+
+  public async sendText(text: string) {
+    tinyassert(text, "text cannot be empty or undefined");
+    tinyassert(typeof text === "string", "text must be a string");
+
+    return await this.sendPlainTextRequest(text);
+  }
+
+  private async sendPlainTextRequest(text: string) {
+    try {
+      const response = await this.axios.post(this.url, text, {
+        headers: {
+          "Content-Type": "text/plain",
+        },
+      });
+      return this.buildResult(response);
+    } catch (error) {
+      handleError(error);
     }
   }
 
@@ -71,4 +97,26 @@ export class IncomingWebhook {
       text: response.data,
     };
   }
+}
+
+function handleError(error: unknown): never {
+  if (isAxiosError(error)) {
+    const data = error.response?.data;
+    const status = error.response?.status;
+    if (data && status === 400) {
+      /**
+       * Throw a MicrosoftTeamsError if the error is a 400 Bad Request
+       * and the response contains an error code and message.
+       */
+      if ("error" in data && "code" in data.error) {
+        const microsoftErrorCode = data.error.code;
+        const microsoftErrorMessage = data.error.message;
+        throw new MicrosoftTeamsError(
+          microsoftErrorMessage,
+          microsoftErrorCode,
+        );
+      }
+    }
+  }
+  throw error;
 }
