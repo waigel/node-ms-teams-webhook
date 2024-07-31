@@ -1,16 +1,20 @@
+import * as ACData from "adaptivecards-templating";
 import axios, {
   isAxiosError,
   type AxiosInstance,
   type AxiosResponse,
 } from "axios";
+import type { AdaptiveCard } from "./adaptive-card";
 import { MicrosoftTeamsError } from "./errors/MicrosoftTeamsError";
 import { tinyassert } from "./utils/tinyassert";
 import { showWebhookUrlDeprecatedWarning } from "./utils/url-deprecated-warning";
 
+/**
+ * @deprecated Use AxiosResponse directly
+ */
 export interface IncomingWebhookResult {
   text: string;
 }
-
 /**
  * A client for Teams's Incoming Webhooks
  */
@@ -44,9 +48,11 @@ export class IncomingWebhook {
       proxy: false,
     });
   }
+
   /**
    * Send a notification to a conversation
    * @param message the message (object describing the message)
+   * @deprecated Use sendText or sendAdaptiveCard instead (NOT COMAP)
    */
   public async send(
     message: Payload,
@@ -63,7 +69,7 @@ export class IncomingWebhook {
     try {
       const response = await this.axios.post(this.url, payload);
 
-      return this.buildResult(response);
+      return this.buildResult(response).data;
     } catch (error) {
       return handleError(error);
     }
@@ -74,6 +80,48 @@ export class IncomingWebhook {
     tinyassert(typeof text === "string", "text must be a string");
 
     return await this.sendPlainTextRequest(text);
+  }
+
+  public async sendAdaptiveCard<T extends AdaptiveCard, D = any>(
+    templatePayload: T,
+    data?: D | [],
+  ) {
+    tinyassert(
+      templatePayload,
+      "adaptiveCard schema cannot be empty or undefined",
+    );
+
+    tinyassert(
+      templatePayload.type === "AdaptiveCard",
+      "Only 'AdaptiveCard' type is supported",
+    );
+
+    const templatePayloadData = Array.isArray(data) ? data : [data];
+
+    const cards = [];
+
+    for (const data of templatePayloadData) {
+      const template = new ACData.Template(templatePayload);
+      const context: ACData.IEvaluationContext = {
+        $root: {
+          ...data,
+        },
+      };
+      cards.push(template.expand(context));
+    }
+
+    if (cards.length === 0) {
+      cards.push(new ACData.Template(templatePayload));
+    }
+
+    return await this.sendPlainJSONRequest({
+      type: "message",
+      summary: "Adaptive Card",
+      attachments: cards.map((card) => ({
+        contentType: "application/vnd.microsoft.card.adaptive",
+        content: card,
+      })),
+    });
   }
 
   private async sendPlainTextRequest(text: string) {
@@ -89,13 +137,24 @@ export class IncomingWebhook {
     }
   }
 
+  private async sendPlainJSONRequest<T>(jsonPayload: T) {
+    try {
+      const response = await this.axios.post(this.url, jsonPayload, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      return this.buildResult(response);
+    } catch (error) {
+      handleError(error);
+    }
+  }
+
   /**
    * Processes an HTTP response into an IncomingWebhookResult.
    */
-  private buildResult(response: AxiosResponse): IncomingWebhookResult {
-    return {
-      text: response.data,
-    };
+  private buildResult(response: AxiosResponse) {
+    return response;
   }
 }
 

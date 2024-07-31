@@ -9,8 +9,15 @@
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"]
     },
-    "build": {
+    "typegen": {
+      "dependsOn": ["^build", "^fetch-json-schemas"]
+    },
+    "fetch-json-schemas": {
       "dependsOn": ["^build"],
+      "outputs": ["**/schemas/*.json"]
+    },
+    "build": {
+      "dependsOn": ["^build", "^fetch-json-schemas", "^typegen"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["**/dist"]
     },
