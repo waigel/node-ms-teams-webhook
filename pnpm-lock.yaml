@@ -35,6 +35,19 @@ importers:
         specifier: ^2.0.5
         version: 2.0.5(@types/node@22.0.1)
 
+  examples/adaptive-card:
+    dependencies:
+      ms-teams-webhook:
+        specifier: workspace:*
+        version: link:../../packages/ms-teams-webhook
+    devDependencies:
+      '@tsconfig/strictest':
+        specifier: ^2.0.5
+        version: 2.0.5
+      '@types/node':
+        specifier: ^18.11.18
+        version: 18.19.42
+
   examples/legacy:
     dependencies:
       ms-teams-webhook-legacy:
