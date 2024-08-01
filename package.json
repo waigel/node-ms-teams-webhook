@@ -8,7 +8,8 @@
     "lint": "turbo format-and-lint:fix",
     "lint:check": "turbo format-and-lint",
     "format-and-lint": "biome check .",
-    "format-and-lint:fix": "biome check . --write"
+    "format-and-lint:fix": "biome check . --write",
+    "test-types": "turbo run test-types"
   },
   "volta": {
     "node": "20.14.0"

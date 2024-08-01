@@ -6,13 +6,16 @@
       "cache": false
     },
     "test": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "^test-types"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"]
     },
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["**/dist"]
+    },
+    "test-types": {
+      "dependsOn": ["^build"]
     },
     "dev": {
       "cache": false,

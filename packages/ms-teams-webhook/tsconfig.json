@@ -5,6 +5,7 @@
     "verbatimModuleSyntax": true,
     "noEmit": true,
     "moduleResolution": "Bundler",
+    "esModuleInterop": true,
     "module": "ESNext",
     "target": "ESNext",
     "lib": ["ESNext", "DOM", "DOM.Iterable"]

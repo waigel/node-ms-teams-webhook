@@ -19,7 +19,7 @@ The URL can come from installation the `Webhook Connector` by `right click on a 
 ### Javascript example:
 
 ```javascript
-const { IncomingWebhook } = require("ms-teams-webhook");
+const { IncomingWebhook } = import("ms-teams-webhook");
 
 // Read a url from the environment variables
 const url = process.env.MS_TEAMS_WEBHOOK_URL;

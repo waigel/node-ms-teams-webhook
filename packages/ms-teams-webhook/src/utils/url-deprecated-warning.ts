@@ -5,15 +5,15 @@
  * @param url
  */
 
-import chalk from "chalk";
-
 const deprecatedURLs = ["webhook.office.com/webhookb2"];
 
-export function showWebhookUrlDeprecatedWarning(url: string) {
+export async function showWebhookUrlDeprecatedWarning(url: string) {
   for (const deprecatedURL of deprecatedURLs) {
     if (url.includes(deprecatedURL)) {
-      console.warn(
-        `\n\n
+      await import("chalk").then((_chalk) => {
+        const chalk = _chalk.default;
+        console.warn(
+          `\n\n
                                             ${chalk.yellowBright(
                                               "############# WARNING #############",
                                             )}\n
@@ -30,7 +30,8 @@ export function showWebhookUrlDeprecatedWarning(url: string) {
           "Original message from Microsoft: https://devblogs.microsoft.com/microsoft365dev/retirement-of-office-365-connectors-within-microsoft-teams",
         )}
         `,
-      );
+        );
+      });
     }
   }
 }

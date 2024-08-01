@@ -15,10 +15,10 @@ describe("url-deprecated-warning", () => {
     console.warn = originalConsoleWarn;
   });
 
-  it("should show a warning if the URL is deprecated", () => {
+  it("should show a warning if the URL is deprecated", async () => {
     const logSpy = vi.spyOn(console, "warn");
 
-    showWebhookUrlDeprecatedWarning(
+    await showWebhookUrlDeprecatedWarning(
       "https://why-you-do-this-to-me.com/webhook.office.com/webhookb2/7437543759797",
     );
     expect(logSpy).toHaveBeenCalledOnce();
@@ -26,10 +26,10 @@ describe("url-deprecated-warning", () => {
     logSpy.mockRestore();
   });
 
-  it("should not show a warning if the URL is not deprecated", () => {
+  it("should not show a warning if the URL is not deprecated", async () => {
     const logSpy = vi.spyOn(console, "warn");
 
-    showWebhookUrlDeprecatedWarning(
+    await showWebhookUrlDeprecatedWarning(
       "https://prod-70.westeurope.logic.azure.com:443/workflows/54367547567834325/triggers/manual/paths/invoke?",
     );
     expect(logSpy).not.toHaveBeenCalled();
