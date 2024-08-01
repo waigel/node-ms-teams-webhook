@@ -41,4 +41,4 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN_RELEASE}}
         run: |
           pnpm config set '//registry.npmjs.org/:_authToken' $NODE_AUTH_TOKEN
-          pnpm publish ${GITHUB_REF_NAME%-v*} --no-git-checks --access public
+          pnpm publish ${GITHUB_REF_NAME%-v*} --no-git-checks --access public --filter=ms-teams-webhook
