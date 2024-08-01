@@ -10,7 +10,7 @@ import { tinyassert } from "./utils/tinyassert";
 import { showWebhookUrlDeprecatedWarning } from "./utils/url-deprecated-warning";
 
 /**
- * @deprecated Use AxiosResponse directly
+ * @deprecated This type is deprecated and will be removed in version 3.0.0.
  */
 export interface IncomingWebhookResult {
   text: string;
@@ -50,8 +50,8 @@ export class IncomingWebhook {
   /**
    * Send a notification to a conversation
    * @param message the message (object describing the message)
-   * @deprecated Microsoft deprecated O365 Connectors, switch to Workflow Apps and use the new
-   * `sendText` or `sendAdaptiveCard` methods
+   * @deprecated Microsoft plans to deprecate the old Webhook Connector by the end of December 2025.
+   * Please switch to the new Workflow Apps. A migration tool and guide will be provided in the future.
    */
   public async send(
     message: Payload,
