@@ -1,6 +1,7 @@
 {
   "name": "ms-teams-webhook-repo",
   "private": true,
+  "version": "2.2.0",
   "scripts": {
     "build": "turbo build",
     "test": "turbo test",
