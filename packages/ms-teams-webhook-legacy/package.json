@@ -1,0 +1,32 @@
+{
+  "name": "ms-teams-webhook-legacy",
+  "version": "2.1.0",
+  "description": "Library for using the Microsoft Teams Incomming Webhooks",
+  "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist/**/*"],
+  "dependencies": {
+    "axios": "^1.6.7"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "tslint --project .",
+    "demo": "ts-node ./demo/example.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waigel/node-ms-teams-webhook.git"
+  },
+  "keywords": ["microsoft", "teams", "webhook"],
+  "author": "waigel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/waigel/node-ms-teams-webhook/issues"
+  },
+  "homepage": "https://github.com/waigel/node-ms-teams-webhook#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "ts-node": "^10.9.1",
+    "tslint": "^6.1.3"
+  }
+}

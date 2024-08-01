@@ -1,44 +1,49 @@
-name: Publish
-
-permissions: read-all
-
+name: CI
+ 
 on:
-  workflow_dispatch:
   push:
-    tags:
-      - '*v*'
+    branches: ["main"]
+  pull_request:
+    types: [opened, synchronize]
+ 
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 
 jobs:
-  npm-publish:
-    name: Publish npm packages
+  build:
+    name: Build and Test
+    timeout-minutes: 15
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
+    # env:
+    #  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+    #  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+ 
     steps:
       - name: Check out code
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
-
+ 
       - uses: pnpm/action-setup@v3
         with:
           version: 9
-        
+ 
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'pnpm'
-        
+ 
       - name: Install dependencies
         run: pnpm install
-  
+
+      - name: Lint
+        run: pnpm lint:check
+
       - name: Build
         run: pnpm build
 
-      - name: Publish packages
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN_RELEASE}}
-        run: |
-          pnpm config set '//registry.npmjs.org/:_authToken' $NODE_AUTH_TOKEN
-          pnpm publish ${GITHUB_REF_NAME%-v*}
+      - name: Test
+        run: pnpm test

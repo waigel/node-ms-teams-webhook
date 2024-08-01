@@ -1,0 +1,47 @@
+{
+  "name": "ms-teams-webhook",
+  "version": "2.1.0",
+  "type": "module",
+  "description": "Library for using the Microsoft Teams Incomming Webhooks",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waigel/node-ms-teams-webhook.git",
+    "directory": "packages/lib"
+  },
+  "author": "waigel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/waigel/node-ms-teams-webhook/issues"
+  },
+  "homepage": "https://github.com/waigel/node-ms-teams-webhook#readme",
+  "keywords": ["microsoft", "teams", "webhook", "adaptivecards", "workflow"],
+  "files": ["dist", "README.md", "LICENSE"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "devDependencies": {
+    "@tsconfig/strictest": "^2.0.5",
+    "@types/body-parser": "^1.19.5",
+    "@types/express": "^4.17.21",
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "json-schema-to-typescript": "^15.0.0",
+    "msw": "^2.3.4",
+    "tsup": "^8.2.3"
+  },
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "test": "vitest",
+    "typegen": "json2ts -i \"schemas/*.json\" -o \"src\" --no-top-ref --no-version --no-banner",
+    "fetch-json-schemas": "curl -o schemas/adaptive-card.json https://adaptivecards.io/schemas/adaptive-card.json"
+  },
+  "dependencies": {
+    "adaptivecards-templating": "^2.3.1",
+    "axios": "^1.6.7",
+    "chalk": "^5.3.0"
+  }
+}
