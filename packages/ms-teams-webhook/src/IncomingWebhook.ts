@@ -170,8 +170,8 @@ export class IncomingWebhook {
    * @param card The raw JSON payload representing the message or card to be sent.
    * @returns A promise that resolves when the raw card is sent successfully.
    */
-  public sendRawAdaptiveCard<T>(card: T) {
-    return this.sendPlainJSONRequest(card);
+  public async sendRawAdaptiveCard<T>(card: T) {
+    return await this.sendPlainJSONRequest(card);
   }
 
   private async sendPlainTextRequest(text: string) {
