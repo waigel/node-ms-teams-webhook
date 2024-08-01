@@ -16,8 +16,12 @@
   "homepage": "https://github.com/waigel/node-ms-teams-webhook#readme",
   "keywords": ["microsoft", "teams", "webhook", "adaptivecards", "workflow"],
   "files": ["dist", "README.md", "LICENSE"],
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "devDependencies": {
     "@tsconfig/strictest": "^2.0.5",
     "@types/body-parser": "^1.19.5",
