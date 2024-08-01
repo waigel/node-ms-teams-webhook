@@ -1,6 +1,6 @@
 {
   "name": "ms-teams-webhook",
-  "version": "2.0.4",
+  "version": "2.2.0",
   "type": "module",
   "description": "Library for using the Microsoft Teams Incomming Webhooks",
   "repository": {
@@ -14,8 +14,18 @@
     "url": "https://github.com/waigel/node-ms-teams-webhook/issues"
   },
   "homepage": "https://github.com/waigel/node-ms-teams-webhook#readme",
-  "keywords": ["microsoft", "teams", "webhook", "adaptivecards", "workflow"],
-  "files": ["dist", "README.md", "LICENSE"],
+  "keywords": [
+    "microsoft",
+    "teams",
+    "webhook",
+    "adaptivecards",
+    "workflow"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
