@@ -73,8 +73,8 @@ importers:
         specifier: ^2.3.1
         version: 2.3.1(adaptive-expressions@4.22.3)
       axios:
-        specifier: ^1.6.7
-        version: 1.7.2
+        specifier: ^1.7.3
+        version: 1.7.3
       chalk:
         specifier: ^5.3.0
         version: 5.3.0
@@ -110,8 +110,8 @@ importers:
   packages/ms-teams-webhook-legacy:
     dependencies:
       axios:
-        specifier: ^1.6.7
-        version: 1.7.2
+        specifier: ^1.7.3
+        version: 1.7.3
     devDependencies:
       '@types/node':
         specifier: ^18.11.18
@@ -1010,8 +1010,8 @@ packages:
   atob-lite@2.0.0:
     resolution: {integrity: sha512-LEeSAWeh2Gfa2FtlQE1shxQ8zi5F9GHarrGKz08TMdODD5T4eH6BMsvtnhbWZ+XQn+Gb6om/917ucvRu7l7ukw==}
 
-  axios@1.7.2:
-    resolution: {integrity: sha512-2A8QhOMrbomlDuiLeK9XibIBzuHeRcqqNOHp0Cyp5EoJ1IFDh+XZH3A6BkXtv0K4gFGCI0Y4BM7B1wOEi0Rmgw==}
+  axios@1.7.3:
+    resolution: {integrity: sha512-Ar7ND9pU99eJ9GpoGQKhKf58GpUOgnzuaB7ueNQ5BMi0p+LZ5oaEnfF999fAArcTIBwXTCHAmGcHOZJaWPq9Nw==}
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -3205,7 +3205,7 @@ snapshots:
 
   atob-lite@2.0.0: {}
 
-  axios@1.7.2:
+  axios@1.7.3:
     dependencies:
       follow-redirects: 1.15.6
       form-data: 4.0.0
