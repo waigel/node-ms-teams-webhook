@@ -1,6 +1,7 @@
 name: Publish
 
-permissions: read-all
+permissions:
+  contents: read
 
 on:
   workflow_dispatch:
@@ -13,7 +14,9 @@ jobs:
     name: Publish npm packages
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
+      pull-requests: write
+      id-token: write
     steps:
       - name: Check out code
         uses: actions/checkout@v4
@@ -21,8 +24,6 @@ jobs:
           fetch-depth: 2
 
       - uses: pnpm/action-setup@v4
-        with:
-          version: 9.4.0
         
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
@@ -39,6 +40,7 @@ jobs:
       - name: Publish packages
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN_RELEASE}}
+          NPM_CONFIG_PROVENANCE: true
         run: |
           pnpm config set '//registry.npmjs.org/:_authToken' $NODE_AUTH_TOKEN
-          pnpm publish ${GITHUB_REF_NAME%-v*} --no-git-checks --access public --filter=ms-teams-webhook
+          pnpm publish ${GITHUB_REF_NAME%-v*} --no-git-checks --provenance --access public --filter=ms-teams-webhook

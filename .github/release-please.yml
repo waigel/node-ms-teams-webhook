@@ -1,4 +1,0 @@
-releaseType: node
-primaryBranch: master
-handleGHRelease: true
-manifest: true
