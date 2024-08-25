@@ -14,8 +14,18 @@
     "url": "https://github.com/waigel/node-ms-teams-webhook/issues"
   },
   "homepage": "https://github.com/waigel/node-ms-teams-webhook#readme",
-  "keywords": ["microsoft", "teams", "webhook", "adaptivecards", "workflow"],
-  "files": ["dist", "README.md", "LICENSE"],
+  "keywords": [
+    "microsoft",
+    "teams",
+    "webhook",
+    "adaptivecards",
+    "workflow"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
