@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.1](https://github.com/waigel/node-ms-teams-webhook/compare/ms-teams-webhook-v2.2.1...ms-teams-webhook@v2.2.1) (2024-08-25)
+
+
+### Miscellaneous Chores
+
+* release 2.2.1 ([46908d4](https://github.com/waigel/node-ms-teams-webhook/commit/46908d4317b452915eb77c7cfe4663c39769b8c6))
+
 ## [2.2.1](https://github.com/waigel/node-ms-teams-webhook/compare/ms-teams-webhook-v2.2.0...ms-teams-webhook-v2.2.1) (2024-08-01)
 
 
