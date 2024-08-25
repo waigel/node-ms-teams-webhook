@@ -2,8 +2,8 @@ import "server-only";
 
 import { createOpenAI } from "@ai-sdk/openai";
 import { streamObject } from "ai";
-import { IAdaptiveCardSchema } from "./schema";
 import { APIRequestSchema } from "./api-request";
+import { IAdaptiveCardSchema } from "./schema";
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;

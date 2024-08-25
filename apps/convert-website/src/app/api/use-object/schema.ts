@@ -209,7 +209,7 @@ export const IAdaptiveCardSchema = ICardElementSchema.extend({
         IFactSetSchema,
         IColumnSetSchema,
         IContainerSchema,
-      ])
+      ]),
     )
     .optional(),
   actions: z
@@ -219,7 +219,7 @@ export const IAdaptiveCardSchema = ICardElementSchema.extend({
         IOpenUrlActionSchema,
         IShowCardActionSchema,
         IExecuteActionSchema,
-      ])
+      ]),
     )
     .optional(),
   speak: z.string().optional(),
