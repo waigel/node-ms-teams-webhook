@@ -63,3 +63,4 @@ out/
 
 **/.turbo/
 dist/
+.vercel
