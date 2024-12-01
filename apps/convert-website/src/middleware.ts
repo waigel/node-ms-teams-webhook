@@ -1,7 +1,7 @@
 import { Ratelimit } from "@upstash/ratelimit";
+import { ipAddress } from "@vercel/functions";
 import { kv } from "@vercel/kv";
 import { NextRequest, NextResponse } from "next/server";
-import { ipAddress } from '@vercel/functions'
 
 const ratelimit = new Ratelimit({
   redis: kv,

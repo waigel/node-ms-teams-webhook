@@ -1,4 +1,4 @@
-import "./teams-container-light.css";;
+import "./teams-container-light.css";
 import * as AdaptiveCards from "adaptivecards";
 import { Loader2 } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -6,8 +6,10 @@ import { useEffect, useState } from "react";
 function MSTeamsCard({
   object,
   isLoading,
-}: { object: any, isLoading: boolean }) {
-  const [cachedHtmlBuild, setCachedHtmlBuild] = useState<HTMLElement | undefined>();
+}: { object: any; isLoading: boolean }) {
+  const [cachedHtmlBuild, setCachedHtmlBuild] = useState<
+    HTMLElement | undefined
+  >();
   useEffect(() => {
     try {
       const adaptiveCard = new AdaptiveCards.AdaptiveCard();
@@ -36,10 +38,15 @@ function MSTeamsCard({
       <div className="teams-inner-frame">
         <div className="teams-botNameAndTime">Test Bot {time}</div>
         <div className="cardHost teams-card">
-          {isLoading ?
-            <Loader2 className="animate-spin h-5 w-5" /> :
-            <div dangerouslySetInnerHTML={{ __html: cachedHtmlBuild?.innerHTML ?? "" }}></div>
-          }
+          {isLoading ? (
+            <Loader2 className="animate-spin h-5 w-5" />
+          ) : (
+            <div
+              dangerouslySetInnerHTML={{
+                __html: cachedHtmlBuild?.innerHTML ?? "",
+              }}
+            ></div>
+          )}
         </div>
       </div>
     </div>
