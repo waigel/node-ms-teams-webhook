@@ -34,21 +34,6 @@ function Editor() {
   );
   const [instroduction, setInstroduction] = useState("");
 
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    try {
-      var adaptiveCard = new AdaptiveCards.AdaptiveCard();
-      adaptiveCard.parse(object);
-      var renderedCard = adaptiveCard.render();
-      if (renderedCard && ref.current) {
-        //set the inside the card ref
-        ref.current?.setHTMLUnsafe(renderedCard.outerHTML);
-      }
-    } catch (e) {
-      //do nothing
-    }
-  }, [object]);
-
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
@@ -69,7 +54,7 @@ function Editor() {
   }
 
   useEffect(() => {
-    console.log(error);
+    console.error(error);
     if (error) {
       toast({
         variant: "destructive",
@@ -112,7 +97,7 @@ function Editor() {
                 <TabsContent value="preview" className="h-full">
                   <div className="rounded-md border bg-muted h-full">
                     <div className="p-8">
-                      <MSTeamsCard innerRef={ref} />
+                      <MSTeamsCard object={object} isLoading={isLoading} />
                     </div>
                   </div>
                 </TabsContent>
