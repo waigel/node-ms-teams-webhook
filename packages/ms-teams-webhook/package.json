@@ -37,7 +37,7 @@
     "body-parser": "^1.20.2",
     "express": "^4.21.2",
     "json-schema-to-typescript": "^15.0.2",
-    "msw": "^2.6.8",
+    "msw": "^2.7.0",
     "tsup": "^8.2.4"
   },
   "scripts": {
