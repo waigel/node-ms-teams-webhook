@@ -17,8 +17,8 @@ importers:
         specifier: ^1.8.3
         version: 1.9.4
       pkg-pr-new:
-        specifier: ^0.0.35
-        version: 0.0.35
+        specifier: ^0.0.39
+        version: 0.0.39
       tsup:
         specifier: ^8.2.4
         version: 8.3.5(jiti@1.21.6)(postcss@8.4.49)(typescript@5.7.2)(yaml@2.6.1)
@@ -33,7 +33,7 @@ importers:
         version: 5.1.4(typescript@5.7.2)(vite@6.0.3(@types/node@20.17.6)(jiti@1.21.6)(yaml@2.6.1))
       vitest:
         specifier: ^2.1.8
-        version: 2.1.8(@types/node@20.17.6)(jiti@1.21.6)(msw@2.6.8(@types/node@20.17.6)(typescript@5.7.2))(yaml@2.6.1)
+        version: 2.1.8(@types/node@20.17.6)(jiti@1.21.6)(msw@2.7.0(@types/node@20.17.6)(typescript@5.7.2))(yaml@2.6.1)
 
   apps/convert-website:
     dependencies:
@@ -129,8 +129,8 @@ importers:
         specifier: ^9
         version: 9.15.0(jiti@1.21.6)
       eslint-config-next:
-        specifier: 15.0.4
-        version: 15.0.4(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3)
+        specifier: 15.1.0
+        version: 15.1.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3)
       postcss:
         specifier: ^8
         version: 8.4.49
@@ -207,8 +207,8 @@ importers:
         specifier: ^15.0.2
         version: 15.0.3
       msw:
-        specifier: ^2.6.8
-        version: 2.6.8(@types/node@20.17.6)(typescript@5.7.2)
+        specifier: ^2.7.0
+        version: 2.7.0(@types/node@20.17.6)(typescript@5.7.2)
       tsup:
         specifier: ^8.2.4
         version: 8.3.5(jiti@1.21.6)(postcss@8.4.49)(typescript@5.7.2)(yaml@2.6.1)
@@ -765,8 +765,8 @@ packages:
   '@next/env@15.1.0':
     resolution: {integrity: sha512-UcCO481cROsqJuszPPXJnb7GGuLq617ve4xuAyyNG4VSSocJNtMU5Fsx+Lp6mlN8c7W58aZLc5y6D/2xNmaK+w==}
 
-  '@next/eslint-plugin-next@15.0.4':
-    resolution: {integrity: sha512-rbsF17XGzHtR7SDWzWpavSfum3/UdnF8bAaisnKwP//si3KWPTedVUsflAdjyK1zW3rweBjbALfKcavFneLGvg==}
+  '@next/eslint-plugin-next@15.1.0':
+    resolution: {integrity: sha512-+jPT0h+nelBT6HC9ZCHGc7DgGVy04cv4shYdAe6tKlEbjQUtwU3LzQhzbDHQyY2m6g39m6B0kOFVuLGBrxxbGg==}
 
   '@next/swc-darwin-arm64@15.1.0':
     resolution: {integrity: sha512-ZU8d7xxpX14uIaFC3nsr4L++5ZS/AkWDm1PzPO6gD9xWhFkOj2hzSbSIxoncsnlJXB1CbLOfGVN4Zk9tg83PUw==}
@@ -2200,8 +2200,8 @@ packages:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
 
-  eslint-config-next@15.0.4:
-    resolution: {integrity: sha512-97mLaAhbJKVQYXUBBrenRtEUAA6bNDPxWfaFEd6mEhKfpajP4wJrW4l7BUlHuYWxR8oQa9W014qBJpumpJQwWA==}
+  eslint-config-next@15.1.0:
+    resolution: {integrity: sha512-gADO+nKVseGso3DtOrYX9H7TxB/MuX7AUYhMlvQMqLYvUWu4HrOQuU7cC1HW74tHIqkAvXdwgAz3TCbczzSEXw==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0 || ^9.0.0
       typescript: '>=3.3.1'
@@ -2357,8 +2357,8 @@ packages:
   fast-levenshtein@2.0.6:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
 
-  fast-xml-parser@4.5.0:
-    resolution: {integrity: sha512-/PlTQCI96+fZMAOLMZK4CWG1ItCbfZ/0jx7UIJFChPNrx7tcEgerUgWbeieCM9MfHInUDyK8DWYZ+YrywDJuTg==}
+  fast-xml-parser@4.5.1:
+    resolution: {integrity: sha512-y655CeyUQ+jj7KBbYMc4FG01V8ZQqjN+gDYGJ50RtfsUB8iG9AmwmwoAgeKLJdmueKKMrH1RJ7yXHTSoczdv5w==}
     hasBin: true
 
   fastq@1.17.1:
@@ -2904,8 +2904,8 @@ packages:
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
-  msw@2.6.8:
-    resolution: {integrity: sha512-nxXxnH6WALZ9a7rsQp4HU2AaD4iGAiouMmE/MY4al7pXTibgA6OZOuKhmN2WBIM6w9qMKwRtX8p2iOb45B2M/Q==}
+  msw@2.7.0:
+    resolution: {integrity: sha512-BIodwZ19RWfCbYTxWTUfTXc+sg4OwjCAgxU1ZsgmggX/7S3LdUifsbUPJs61j0rWb19CZRGY5if77duhc0uXzw==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -3106,8 +3106,8 @@ packages:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
     engines: {node: '>= 6'}
 
-  pkg-pr-new@0.0.35:
-    resolution: {integrity: sha512-ljR1Axx1Vb4uY8NZ+QItj1PpuBtLDJcgEbWsdscDdif1I3YJUpfSRWmdULPkTbNxhfbG8TnPmheAZSmqh2QzcQ==}
+  pkg-pr-new@0.0.39:
+    resolution: {integrity: sha512-ItcsHK+4uO0qmjK4RNs6vTWv3xFhbPZd5U6RoYbxRURWNZfH7KvpyqRzaw4GR7de/IjkdHVZHCzQkjnp3VOVdg==}
     hasBin: true
 
   pkg-types@1.2.1:
@@ -4460,7 +4460,7 @@ snapshots:
 
   '@next/env@15.1.0': {}
 
-  '@next/eslint-plugin-next@15.0.4':
+  '@next/eslint-plugin-next@15.1.0':
     dependencies:
       fast-glob: 3.3.1
 
@@ -5179,13 +5179,13 @@ snapshots:
       chai: 5.1.2
       tinyrainbow: 1.2.0
 
-  '@vitest/mocker@2.1.8(msw@2.6.8(@types/node@20.17.6)(typescript@5.7.2))(vite@6.0.3(@types/node@20.17.6)(jiti@1.21.6)(yaml@2.6.1))':
+  '@vitest/mocker@2.1.8(msw@2.7.0(@types/node@20.17.6)(typescript@5.7.2))(vite@6.0.3(@types/node@20.17.6)(jiti@1.21.6)(yaml@2.6.1))':
     dependencies:
       '@vitest/spy': 2.1.8
       estree-walker: 3.0.3
       magic-string: 0.30.14
     optionalDependencies:
-      msw: 2.6.8(@types/node@20.17.6)(typescript@5.7.2)
+      msw: 2.7.0(@types/node@20.17.6)(typescript@5.7.2)
       vite: 6.0.3(@types/node@20.17.6)(jiti@1.21.6)(yaml@2.6.1)
 
   '@vitest/pretty-format@2.1.8':
@@ -5245,7 +5245,7 @@ snapshots:
       btoa-lite: 1.0.0
       d3-format: 2.0.0
       dayjs: 1.11.13
-      fast-xml-parser: 4.5.0
+      fast-xml-parser: 4.5.1
       jspath: 0.4.0
       lodash.isequal: 4.5.0
       lru-cache: 5.1.1
@@ -5873,9 +5873,9 @@ snapshots:
 
   escape-string-regexp@4.0.0: {}
 
-  eslint-config-next@15.0.4(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3):
+  eslint-config-next@15.1.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3):
     dependencies:
-      '@next/eslint-plugin-next': 15.0.4
+      '@next/eslint-plugin-next': 15.1.0
       '@rushstack/eslint-patch': 1.10.4
       '@typescript-eslint/eslint-plugin': 7.2.0(@typescript-eslint/parser@7.2.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3)
       '@typescript-eslint/parser': 7.2.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3)
@@ -6143,7 +6143,7 @@ snapshots:
 
   fast-levenshtein@2.0.6: {}
 
-  fast-xml-parser@4.5.0:
+  fast-xml-parser@4.5.1:
     dependencies:
       strnum: 1.0.5
 
@@ -6665,7 +6665,7 @@ snapshots:
 
   ms@2.1.3: {}
 
-  msw@2.6.8(@types/node@20.17.6)(typescript@5.7.2):
+  msw@2.7.0(@types/node@20.17.6)(typescript@5.7.2):
     dependencies:
       '@bundled-es-modules/cookie': 2.0.1
       '@bundled-es-modules/statuses': 1.0.1
@@ -6676,12 +6676,12 @@ snapshots:
       '@open-draft/until': 2.1.0
       '@types/cookie': 0.6.0
       '@types/statuses': 2.0.5
-      chalk: 4.1.2
       graphql: 16.9.0
       headers-polyfill: 4.0.3
       is-node-process: 1.2.0
       outvariant: 1.4.3
       path-to-regexp: 6.3.0
+      picocolors: 1.1.1
       strict-event-emitter: 0.5.1
       type-fest: 4.27.0
       yargs: 17.7.2
@@ -6862,7 +6862,7 @@ snapshots:
 
   pirates@4.0.6: {}
 
-  pkg-pr-new@0.0.35:
+  pkg-pr-new@0.0.39:
     dependencies:
       '@jsdevtools/ez-spawn': 3.0.4
       '@octokit/action': 6.1.0
@@ -7732,10 +7732,10 @@ snapshots:
       jiti: 1.21.6
       yaml: 2.6.1
 
-  vitest@2.1.8(@types/node@20.17.6)(jiti@1.21.6)(msw@2.6.8(@types/node@20.17.6)(typescript@5.7.2))(yaml@2.6.1):
+  vitest@2.1.8(@types/node@20.17.6)(jiti@1.21.6)(msw@2.7.0(@types/node@20.17.6)(typescript@5.7.2))(yaml@2.6.1):
     dependencies:
       '@vitest/expect': 2.1.8
-      '@vitest/mocker': 2.1.8(msw@2.6.8(@types/node@20.17.6)(typescript@5.7.2))(vite@6.0.3(@types/node@20.17.6)(jiti@1.21.6)(yaml@2.6.1))
+      '@vitest/mocker': 2.1.8(msw@2.7.0(@types/node@20.17.6)(typescript@5.7.2))(vite@6.0.3(@types/node@20.17.6)(jiti@1.21.6)(yaml@2.6.1))
       '@vitest/pretty-format': 2.1.8
       '@vitest/runner': 2.1.8
       '@vitest/snapshot': 2.1.8
