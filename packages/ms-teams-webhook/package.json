@@ -30,15 +30,15 @@
     }
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.17.1",
+    "@arethetypeswrong/cli": "^0.17.4",
     "@tsconfig/strictest": "^2.0.5",
     "@types/body-parser": "^1.19.5",
     "@types/express": "^5.0.0",
     "body-parser": "^1.20.2",
     "express": "^4.21.2",
-    "json-schema-to-typescript": "^15.0.2",
-    "msw": "^2.6.8",
-    "tsup": "^8.2.4"
+    "json-schema-to-typescript": "^15.0.4",
+    "msw": "^2.7.1",
+    "tsup": "^8.3.6"
   },
   "scripts": {
     "dev": "tsup --watch",
