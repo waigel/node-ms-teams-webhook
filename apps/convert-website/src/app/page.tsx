@@ -1,7 +1,7 @@
-import { Separator } from "@/components/ui/separator";
-import { Tabs } from "@/components/ui/tabs";
 import { Metadata } from "next";
 import Image from "next/image";
+import { Separator } from "@/components/ui/separator";
+import { Tabs } from "@/components/ui/tabs";
 import Editor from "./editor";
 
 export const metadata: Metadata = {

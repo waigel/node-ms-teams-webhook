@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import MicrosoftTeamsError from "./MicrosoftTeamsError";
 import { isMicrosoftTeamsError } from "./isMicrosoftTeamsError";
+import MicrosoftTeamsError from "./MicrosoftTeamsError";
 
 describe("isMicrosoftTeamsError", () => {
   it("should return true if the error is created by core::createError", function () {

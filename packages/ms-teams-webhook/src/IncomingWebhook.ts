@@ -1,8 +1,8 @@
 import * as ACData from "adaptivecards-templating";
 import axios, {
-  isAxiosError,
   type AxiosInstance,
   type AxiosResponse,
+  isAxiosError,
 } from "axios";
 import type { AdaptiveCard } from "./adaptive-card";
 import { MicrosoftTeamsError } from "./errors/MicrosoftTeamsError";

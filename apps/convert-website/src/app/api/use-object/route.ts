@@ -19,7 +19,7 @@ export async function POST(req: Request) {
   const result = await streamObject({
     model: openai("gpt-4o-mini"),
     schema: IAdaptiveCardSchema,
-    maxTokens: 1000,
+    maxOutputTokens: 1000,
     prompt:
       `You are a json convert expert. You receive a Microsoft MessageCard as JSON and you need to convert it to an AdaptiveCard.
       DO NOT add more content to the card. The card should be as close as possible to the original MessageCard.

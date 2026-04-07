@@ -1,2 +1,2 @@
-export { MicrosoftTeamsError } from "./MicrosoftTeamsError";
 export { isMicrosoftTeamsError } from "./isMicrosoftTeamsError";
+export { MicrosoftTeamsError } from "./MicrosoftTeamsError";
