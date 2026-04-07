@@ -6,7 +6,10 @@ import { useEffect, useState } from "react";
 function MSTeamsCard({
   object,
   isLoading,
-}: { object: any; isLoading: boolean }) {
+}: {
+  object: any;
+  isLoading: boolean;
+}) {
   const [cachedHtmlBuild, setCachedHtmlBuild] = useState<
     HTMLElement | undefined
   >();

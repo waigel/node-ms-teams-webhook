@@ -1,30 +1,27 @@
 "use client";
 
+import { experimental_useObject as useObject } from "@ai-sdk/react";
+import * as AdaptiveCards from "adaptivecards";
+import { Loader2 } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import CodeEditor from "@/components/code-editor";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import * as AdaptiveCards from "adaptivecards";
-import { experimental_useObject as useObject } from "ai/react";
-import { Loader2 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
 import MSTeamsCard from "../components/ms-teams-card";
-import exampleMessageCard from "../data/example-message-card.json" assert {
+import exampleMessageCard from "../data/example-message-card.json" with {
   type: "json",
 };
-import _jsonSchema from "../schemas/adaptive-card.json" assert { type: "json" };
-import { APIRequest } from "./api/use-object/api-request";
+import _jsonSchema from "../schemas/adaptive-card.json" with { type: "json" };
+
 import { IAdaptiveCardSchema } from "./api/use-object/schema";
 
 function Editor() {
   const { toast } = useToast();
 
-  const { object, submit, isLoading, error, stop } = useObject<
-    unknown,
-    APIRequest
-  >({
+  const { object, submit, isLoading, error, stop } = useObject({
     api: "/api/use-object",
     schema: IAdaptiveCardSchema,
   });

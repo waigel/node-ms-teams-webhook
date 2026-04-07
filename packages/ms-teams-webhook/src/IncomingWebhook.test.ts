@@ -1,9 +1,9 @@
-import { http, HttpResponse } from "msw";
+import { HttpResponse, http } from "msw";
 import { setupServer } from "msw/node";
 import { afterAll, afterEach, beforeAll, describe, expect, it } from "vitest";
 import { AdaptiveCardMock } from "../tests/adaptive-card-mock";
-import { IncomingWebhook } from "./IncomingWebhook";
 import { MicrosoftTeamsError } from "./errors";
+import { IncomingWebhook } from "./IncomingWebhook";
 import { TinyAssertionError } from "./utils/tinyassert";
 
 const server = setupServer(
